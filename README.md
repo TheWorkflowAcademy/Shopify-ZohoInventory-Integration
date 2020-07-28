@@ -11,6 +11,9 @@ Auth Token Link Generator: https://accounts.zoho.com/apiauthtoken/create?SCOPE=Z
 
 ## Tutorial
 
+### Introduction
+The script is broken down into a few parts, but should be executed in a single function.
+
 ### Define the Required Variables
 These variables are required for the function execution. The auth token is inserted here.
 ```
