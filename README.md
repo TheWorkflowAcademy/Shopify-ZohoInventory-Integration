@@ -16,7 +16,7 @@ The script is broken down into a few parts, but should be executed in a single f
 
 ### Define the Required Variables
 These variables are required for the function execution. The auth token is inserted here.
-```
+```javascript
 salesorderID = salesorder.get("salesorder_id");
 salesorderdate = salesorder.get("date").toDate();
 organizationID = organization.get("organization_id");
@@ -27,7 +27,7 @@ authtoken = "21fce7c632ec79807ecee9713c33a594";
 ### Create the Package & Shipment Record
 This part of the script creates the Package & Shipment Record based on the Sales Order, and marks the Shipment as Delivered.
 
-```
+```javascript
 //Create Package & Shipment Record
 mapper = Map();
 customerID = salesorder.get("customer_id").toString();
@@ -81,7 +81,7 @@ info resp.toMap().get("message");
 
 ### Create the Invoice Record
 This script creates the Invoice and marks it as Sent based on the Sales Order.
-```
+```javascript
 //Create Invoice Record
 bson = Map();
 customerID = salesorder.get("customer_id").toString();
@@ -135,7 +135,7 @@ invoice_number = response.get("invoice").get("invoice_number");
 ### Create the Payment for the Invoice
 Since all Sales Orders are technically already paid for and managed in Shopify before coming into Zoho Inventory, it would be a good idea to mark the invoices as "PAID" instead of leaving them "OVERDUE BY X DAYS" if left unattended. This script marks the Invoice as PAID by creating a payment for it.
 
-```
+```javascript
 //Create Payment for the Invoice
 paramap = Map();
 paramap.put("customer_id",customer_id);
